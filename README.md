@@ -32,57 +32,6 @@ LabelLoupe reads the **printed ingredients** on packaging with on-device VisionK
 | Monetization | 10 free committed scans → lifetime or monthly IAP |
 
 ---
-
-## Stack
-
-- **Swift 6** / **SwiftUI** / **iOS 26+** (minimum deployment as configured in the Xcode project)
-- VisionKit live OCR; UIKit bridge for the camera scanner
-- `LabelLoupeCore` — Aho-Corasick matcher, deterministic parsers, quota policy
-- Apple **FoundationModels** (structured parse when available)
-- SwiftData (+ CloudKit on device builds) · StoreKit 2 · TipKit · WidgetKit / App Intents
-
----
-
-## Open in Xcode
-
-1. Open `LabelLoupe.xcodeproj`
-2. Select the **LabelLoupe** scheme (StoreKit config: `LabelLoupe.storekit`)
-3. Run on a **physical iPhone** for live camera scanning  
-   Simulator uses the branded **Choose label photo** path
-
-Developer Portal / App Store Connect setup: [Docs/DEVELOPER_PORTAL_SETUP.md](Docs/DEVELOPER_PORTAL_SETUP.md)
-
----
-
-## Tests & rules dataset
-
-```bash
-cd Packages/LabelLoupeCore && swift test
-```
-
-```bash
-python3 Scripts/compile_curated_rules.py
-python3 Scripts/validate_rules.py --verify-dois
-```
-
-- Sources: [Docs/DATASET_SOURCES.md](Docs/DATASET_SOURCES.md)  
-- Clinical promotion gate: [Docs/CLINICAL_REVIEW_CHECKLIST.md](Docs/CLINICAL_REVIEW_CHECKLIST.md)  
-- Release builds exclude `draft` rules (`includeDraftRules = false`)
-
----
-
-## Documentation
-
-| Doc | Purpose |
-|---|---|
-| [Docs/PRIVACY_POLICY.md](Docs/PRIVACY_POLICY.md) | Privacy policy (App Store URL–ready) |
-| [Docs/ASO_AppStoreConnect.md](Docs/ASO_AppStoreConnect.md) | Listing copy, keywords, description |
-| [Docs/APP_STORE_CONNECT_METADATA.md](Docs/APP_STORE_CONNECT_METADATA.md) | Full ASC populate checklist |
-| [Docs/API_CONTRACTS.md](Docs/API_CONTRACTS.md) | OTA rules + feedback webhook contracts |
-| [LabelLoupe_documents.md](LabelLoupe_documents.md) | Product / architecture spec |
-
----
-
 ## Privacy (short)
 
 - **No LabelLoupe account.** No advertising ID. No tracking.  
@@ -95,6 +44,5 @@ Full policy: [Docs/PRIVACY_POLICY.md](Docs/PRIVACY_POLICY.md)
 
 ---
 
-## License
-
-`TODO:` Add your chosen open-source or proprietary license before publishing the repository.
+## Copyright: 
+Dr.Alexandar Vincent Paulraj.
